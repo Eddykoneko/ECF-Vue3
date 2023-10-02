@@ -21,7 +21,6 @@ onBeforeMount(async () => {
 
 
 <template>
-           <template>
   <div class="container-fluid d-flex align-items-center justify-content-center">
     <div class="mx-auto">
       <div class="card border-primary mb-3" style="max-width: 32rem;">
@@ -42,6 +41,5 @@ onBeforeMount(async () => {
       </div>
     </div>
   </div> 
-</template>
 
 </template>
