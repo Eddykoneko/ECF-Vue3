@@ -9,14 +9,17 @@ const localMonster = ref({});
 const newAPI = API_ENDPOINT + routeId;
 
 onBeforeMount(async () => {
-  const monster = await axios.get(newAPI);
-  const { data, status } = monster;
-  if (status === 200) {
-    localMonster.value = data;
-  } else {
-    console.error('OUPS 😣');
+  try {
+    const monster = await axios.get(newAPI);
+    const { data, status } = monster;
+    if (status === 200) {
+      localMonster.value = data;
+    }
+  } catch (error) {
+    console.error('OUPS 😣', error);
   }
 });
+
 </script>
 
 
@@ -28,18 +31,12 @@ onBeforeMount(async () => {
         <img :src="localMonster.image" alt="Monster Image">
         <div class="card-body text-primary">      
           <h5 class="card-title">{{ localMonster.name }}</h5>
-          <p class="card-text">
-            *description* These heavyweight monsters can be found all over Hyrule. 
-            They're much tougher than their standard counterparts and often have much stronger weapons equipped.
-          </p>
+          <p class="card-text">{{ localMonster.description }}</p>
           <ul class="list mt-2">
-            <li>[Drops 1]</li>
-            <li>[Drops 2]</li>
-            <li>[Drops 3]</li>
+            <li v-for="drop in localMonster.drops">{{ drop }}</li>
           </ul>
         </div>
       </div>
     </div>
   </div> 
-
 </template>

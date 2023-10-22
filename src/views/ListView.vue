@@ -1,4 +1,5 @@
 <script setup>
+
 import { onBeforeMount, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
@@ -11,21 +12,19 @@ onBeforeMount(async () => {
   const monsters = await axios.get(API_ENDPOINT);
   const { data, status } = monsters;
   if (status === 200) {
-    localMonsters.value = data; // Assurez-vous que les données sont sous le bon format
+    localMonsters.value = data;
   } else {
     console.error('OUPS 😣');
   }
 });
 
-const goToDetail = (monsterId) => {
-  router.push({
-    name: 'Detail',
-    params: {
-      id: monsterId
-    }
-  });
-};
+
+const goToDetail = (id) => {
+  router.push(`/detail/${id}`);
+}
+
 </script>
+
 <template>
   <section data-bs-version="5.1" class="features05 cid-sRQcud4Jjb mt-6" id="features05-2">
     <div class="container-fluid">
@@ -50,7 +49,11 @@ const goToDetail = (monsterId) => {
                   <td>{{ monster.name }}</td>
                   <td>{{ monster.category }}</td>
                   <td>
-                    <button @click="goToDetail(monster._id)" type="button" class="btn btn-primary btn-sm m-0">Voir 👀</button>
+                    <div class="mbr-section-btn">
+                      <button @click="goToDetail(monster._id)" class="justify-content-center btn btn-primary display-4">
+                        VOIR
+                      </button>
+                    </div>                
                   </td>
                 </tr>
               </tbody>
@@ -61,6 +64,3 @@ const goToDetail = (monsterId) => {
     </div>
   </section>
 </template>
-
-
-
