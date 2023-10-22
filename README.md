@@ -1,4 +1,8 @@
-# luong-william-vue3.git
+C'est un ECF Vue3 avec une API sur des monstres de Zelda
+
+![ECF Vue3-1](https://github.com/Eddykoneko/ECF-Vue3/assets/128144776/2e77e314-7563-48b9-a8bf-a8d9871b5479)
+
+![ECF Vue3-2](https://github.com/Eddykoneko/ECF-Vue3/assets/128144776/f446bd58-0223-4e23-9a0e-b0c44d7f7a07)
 
 This template should help get you started developing with Vue 3 in Vite.
 
