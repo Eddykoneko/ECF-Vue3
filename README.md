@@ -1,4 +1,4 @@
-C'est un ECF Vue3 avec une API sur des monstres de Zelda
+It's an ECF Vue3 with an API on Zelda monsters
 
 ![ECF Vue3-1](https://github.com/Eddykoneko/ECF-Vue3/assets/128144776/2e77e314-7563-48b9-a8bf-a8d9871b5479)
 
